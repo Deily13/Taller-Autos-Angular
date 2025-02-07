@@ -1,0 +1,32 @@
+.mat-flat-button {
+    font-family:'Black Ops One', sans-serif; 
+    background-color: #030355c2 !important; 
+    font-size: 40px;
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 9px;
+    margin: 10px;
+  }
+  
+  .mat-flat-button:hover {
+    background-color: #00b318;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+/* Ejemplo: Eliminar el efecto ripple (onda) */
+.mat-flat-button {
+  --mat-ripple-color: transparent;
+}
+
+:host {
+  display: block;
+}
+
+/* Alinear botones horizontalmente */
+:host ::ng-deep .botones-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  gap: 10px; /* Espacio entre botones */
+}

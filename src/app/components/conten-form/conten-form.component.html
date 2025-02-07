@@ -1,0 +1,17 @@
+<mat-card appearance="outlined" class="custom-card">
+  <mat-card-content>
+    <app-formulario *ngIf="mostrarFormulario"></app-formulario>
+    <mat-card-title class="card-title">
+      <div appAnimationSaludo [triggerAnimation]="animarTitulo">
+        <span>¡Bienvenido!</span>
+        <h5 [style.white-space]="'pre-wrap'">{{ mensaje }}</h5>
+      </div>
+      <app-botones
+        *ngIf="mostrarSoloBoton3"
+        [mostrarSoloBoton3]="true"
+        (botonPresionado)="onBotonPresionado($event)">
+      </app-botones>
+    </mat-card-title>
+    <app-registro *ngIf="mostrarRegistro"></app-registro>
+  </mat-card-content>
+</mat-card> 

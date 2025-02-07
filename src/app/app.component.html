@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+    
+      <mat-toolbar>
+
+  <nav>mY programa</nav>
+
+  <button mat-icon-button *ngIf="mostrarMenu" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+       
+      </mat-toolbar>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>morsa de verano</button>
+        <button mat-menu-item>fssss</button>
+        <button mat-menu-item>agggg</button>
+      </mat-menu>
+        
+      <app-solution-card *ngIf="mostrarSolutionCard"  [cards]="cardData"></app-solution-card>
+  
+  
+    <app-conten-boton *ngIf="mostrarContenBoton" (botonPresionado)="onBotonPresionado()"></app-conten-boton>
+
+    <app-conten-form *ngIf="mostrarContenForm"></app-conten-form>
+    
+<router-outlet></router-outlet>
+</html> 
+    

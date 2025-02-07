@@ -1,0 +1,10 @@
+<div class="container-solucion">
+<mat-card  *ngFor="let card of cards" [appCheckbox]="initialCardColor" [appCheckboxChecked]="checkedCardColor">
+    <mat-card-content>
+      <div class="titulo">{{ card.title }}</div>
+      <div class="solucion-card"></div>
+      <img [src]="card.imagePath" alt="imagen de {{ card.title }}" />
+    </mat-card-content>
+  </mat-card>
+ 
+</div>

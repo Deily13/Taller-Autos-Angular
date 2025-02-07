@@ -1,0 +1,9 @@
+<div class="botones-container">
+  <div *ngFor="let boton of botones; let i = index">
+  <button mat-flat-button *ngIf="boton.mostrar" (click)="toggleBoton(i)" class="mat-flat-button">
+  
+  {{ boton.texto }}
+  
+  </button>
+  </div>
+  </div>

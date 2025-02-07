@@ -1,0 +1,50 @@
+.custom-card {
+    margin: 20px auto;
+    max-width: 90%;
+    background: linear-gradient(to right, #07369b, #002fff, #001e80, #0d1253, #07076eb6, #110247a6, #010411d2);
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;  
+}
+
+.card-title {
+    color: #fff;
+    font-family: 'Black Ops One', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 0 15px #272323d5;
+    
+}
+
+h5{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+}
+
+mat-card-content {
+    width: 100%;
+    display: flex;
+    align-items:center;
+}
+
+@keyframes desplazarIzquierda {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animar-titulo {
+    animation: desplazarIzquierda 2s forwards;
+  }
+  
+  .titulo-contenedor {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  

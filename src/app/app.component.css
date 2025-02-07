@@ -1,0 +1,48 @@
+::ng-deep html {
+  background-image: url("/assets/img/font-acero3.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+  
+  .mat-toolbar {
+    width: 96%;
+    height: 100px;
+    position: relative;
+    margin: 2%;
+    margin-top: 5px;
+    padding-left: 2%;
+    padding-right: 3%;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    }
+  
+    
+  
+    .mat-toolbar {
+      border-bottom: 2px solid #082575; 
+    }
+
+ 
+    @media (max-width: 659px) {
+      /* Estilos para pantallas menores a 660px de ancho */
+      .menu-button {
+        display: block; /* Mostrar el botón del menú */
+      }
+    }
+    
+    @media (min-width: 660px) {
+      /* Estilos para pantallas mayores o iguales a 660px de ancho */
+      .menu-button {
+        display: none; /* Ocultar el botón del menú */
+      }
+    }
+    
