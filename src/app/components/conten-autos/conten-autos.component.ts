@@ -19,6 +19,12 @@ export class ContenAutosComponent {
 
 @Input() marks: MarkData[] = [];
   initialCardColor: string = 'transparent';
-  checkedCardColor: string = '#afabab';
+  checkedCardColor: string = '#6863ac77';
 
+
+  selectedIndex: number | null = null; // Control de la marca seleccionada
+
+  selectMark(index: number) {
+    this.selectedIndex = this.selectedIndex === index ? null : index;
+  }
 }

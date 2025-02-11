@@ -1,6 +1,10 @@
 <div class="container-marcas">
    
-    <mat-card  *ngFor="let mark of marks" [appCheckboxMarcas]="initialCardColor" [appCheckboxChecked]="checkedCardColor">
+    <mat-card  *ngFor="let mark of marks; let i = index"
+    [appCheckboxMarcas]="'transparent'"
+    [appCheckboxChecked]="'#6863ac77'"
+    [isSelected]="selectedIndex === i"
+    (click)="selectMark(i)">
         <mat-card-content>
           <div class="nombre">{{ mark.mark }}</div>
           <div class="marca"></div>

@@ -1,45 +1,49 @@
-import { Directive, ElementRef, Renderer2, HostListener, Input} from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appCheckbox]'
 })
-export class CheckboxDirective {
+export class CheckboxDirective implements OnInit {
   @Input() appCheckbox: string = 'transparent'; // Color de fondo por defecto
   @Input() appCheckboxChecked: string = 'lightgreen';
 
-  private isChecked: boolean = false; // Variable para trackear el estado
+  private isChecked: boolean = false;
+  private originalBackgroundColor: string = ''; // Guarda el color original
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
-    // Establecer el color inicial (transparente)
-    this.changeBackgroundColor(this.appCheckbox);
+    // Guarda el color de fondo original
+    this.originalBackgroundColor = this.getBackgroundColor();
+    this.setBackgroundColor(this.appCheckbox); // Establece el color inicial
   }
 
+  @HostListener('click')
+  onClick() {
+    this.isChecked = !this.isChecked;
+    this.setBackgroundColor(this.isChecked ? this.appCheckboxChecked : this.appCheckbox);
+  }
 
-  @HostListener('click') onClick() {
-    this.isChecked = !this.isChecked; // Invierte el estado
-
-    if (this.isChecked) {
-      this.changeBackgroundColor(this.appCheckboxChecked); // Color "checked"
-    } else {
-      this.changeBackgroundColor(this.appCheckbox); // Color "unchecked" (original)
+  @HostListener('mouseenter')
+  onMouseEnter() {
+    if (!this.isChecked) {
+      const hoverColor = this.appCheckbox === 'transparent' ? 'lightblue' : this.appCheckbox;
+      this.setBackgroundColor(hoverColor);
     }
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
-    if (!this.isChecked) { // Solo cambia el color al pasar el mouse si no está "checked"
-      this.changeBackgroundColor(this.appCheckbox === 'transparent' ? 'lightblue' : this.appCheckbox); // Color hover, si es transparente usa lightblue
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    if (!this.isChecked) {
+      this.setBackgroundColor(this.appCheckbox);
     }
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
-    if (!this.isChecked) { // Solo cambia el color al salir el mouse si no está "checked"
-      this.changeBackgroundColor(this.appCheckbox); // Color original
-    }
-  }
-
-  private changeBackgroundColor(color: string) {
+  private setBackgroundColor(color: string) {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
+  }
+
+  private getBackgroundColor(): string {
+    return window.getComputedStyle(this.el.nativeElement).backgroundColor;
   }
 }
