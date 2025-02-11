@@ -11,9 +11,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ContenBotonComponent } from './components/conten-boton/conten-boton.component';
 import { CommonModule } from '@angular/common';
 import { CardData } from './model/card-data';
-import { MarkData } from './model/mark-data';
 
-import { ContenAutosComponent } from './components/conten-autos/conten-autos.component';
 
 
 
@@ -32,7 +30,7 @@ import { ContenAutosComponent } from './components/conten-autos/conten-autos.com
     SolutionCardComponent,
     ContenBotonComponent,
     ContenFormComponent,
-    ContenAutosComponent
+  
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -41,7 +39,7 @@ export class AppComponent implements OnInit {
   title = 'taller-autos';
 
   mostrarSolutionCard: boolean = true;
-  mostrarContenAutos: boolean = true;
+  mostrarContenAutos: boolean = false;
   mostrarMenu: boolean = false;
   mostrarIcono: boolean = false;
   screenWidth: number = 0;
@@ -66,21 +64,7 @@ export class AppComponent implements OnInit {
     { title: 'Pulido Y Encerado', imagePath: 'assets/img/Servicios_de_taller/2018-02-14-teroson-mejora-su-gama-de-masillas-para-la-reparación-jpg-1-.jpg' },
   ];
 
-  markData: MarkData[] = [
-
-    { mark: 'BMW', markPath: 'assets/img/Marcas/BMW.jpg' },
-    { mark: 'Bugati', markPath: 'assets/img/Marcas/Bugati.jpg' },
-    { mark: 'Rolls-Royce', markPath: 'assets/img/Marcas/Roll-Roice.jpg' },
-    { mark: 'Lamborgini', markPath: 'assets/img/Marcas/Lamborgini.jpg' },
-    { mark: 'Land Rover', markPath: 'assets/img/Marcas/land-rover.jpg' },
-    { mark: 'Maserati', markPath: 'assets/img/Marcas/maserati .jpg' },
-    { mark: 'Mercedes', markPath: 'assets/img/Marcas/Mercedes.jpg' },
-    { mark: 'Porshe', markPath: 'assets/img/Marcas/Porshe.jpeg' },
-    { mark: 'Ferrari', markPath: 'assets/img/Marcas/Ferrari.jpg' },
-
-
-  ];
-
+ 
   // Método para manejar el evento del botón
   onBotonPresionado() {
     console.log("AppComponent: Evento botonPresionado recibido");

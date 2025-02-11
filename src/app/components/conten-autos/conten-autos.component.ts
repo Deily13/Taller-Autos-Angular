@@ -21,6 +21,21 @@ export class ContenAutosComponent {
   initialCardColor: string = 'transparent';
   checkedCardColor: string = '#6863ac77';
 
+   markData: MarkData[] = [
+  
+      { mark: 'BMW', markPath: 'assets/img/Marcas/BMW.jpg' },
+      { mark: 'Bugati', markPath: 'assets/img/Marcas/Bugati.jpg' },
+      { mark: 'Rolls-Royce', markPath: 'assets/img/Marcas/Roll-Roice.jpg' },
+      { mark: 'Lamborgini', markPath: 'assets/img/Marcas/Lamborgini.jpg' },
+      { mark: 'Land Rover', markPath: 'assets/img/Marcas/land-rover.jpg' },
+      { mark: 'Maserati', markPath: 'assets/img/Marcas/maserati .jpg' },
+      { mark: 'Mercedes', markPath: 'assets/img/Marcas/Mercedes.jpg' },
+      { mark: 'Porshe', markPath: 'assets/img/Marcas/Porshe.jpeg' },
+      { mark: 'Ferrari', markPath: 'assets/img/Marcas/Ferrari.jpg' },
+  
+  
+    ];
+  
 
   selectedIndex: number | null = null; // Control de la marca seleccionada
 
