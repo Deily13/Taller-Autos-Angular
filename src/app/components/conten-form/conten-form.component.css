@@ -5,7 +5,6 @@
   border-radius: 3px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-direction: column;
 }
 
 h5 {
@@ -15,12 +14,13 @@ h5 {
 }
 
 .card-title {
+  background: linear-gradient(to right, #0d1253, #07076eb6, #110247a6, #01041100) ;
   flex: 1;
   color: #fff;
   font-family: 'Black Ops One', sans-serif;
   font-size: 50px;
   text-align: center;
-  text-shadow: 0 0 15px #272323d5;
+  text-shadow: 0 0 15px rgba(39, 35, 35, 0.84);
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -28,19 +28,18 @@ h5 {
 }
 
 mat-card-content {
-  width: 100%;
   display: flex;
   gap: 20px;
+  width: 100%;
 }
 
 .card-title div[appAnimationSaludo] {
   position: relative;
-  left: 0;
   width: 100%;
-  transform: translateX(0);
-  transition: transform 3s ease-in-out;
   display: flex;
   flex-direction: column;
+  transform: translateX(0);
+  transition: transform 3s ease-in-out;
 }
 
 .card-title div[appAnimationSaludo].hidden {
@@ -49,14 +48,13 @@ mat-card-content {
 
 .app-registro-container {
   flex: 1;
-  max-width: 40%; /* Registro limitado al lado derecho */
+  max-width: 40%;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
 }
 
 app-registro {
-  max-width: 600px; /* Limita el tamaño del componente registro */
+  max-width: 600px;
   width: 100%;
   box-sizing: border-box;
 }
